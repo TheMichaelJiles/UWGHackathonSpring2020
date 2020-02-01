@@ -5,7 +5,7 @@ def create_textbook_table():
     connection = sqlite3.connect('ore.db')
     cursor = connection.cursor()
     
-    cursor.execute('''CREATE TABLE IF NOT EXISTS textbooks (title TEXT, author TEXT, subject TEXT, summary TEXT, link TEXT, courseid TEXT)''')
+    cursor.execute('''CREATE TABLE IF NOT EXISTS textbooks (title TEXT, author TEXT, subject TEXT, summary TEXT, link TEXT, courseid TEXT, tag TEXT)''')
     connection.commit()
     connection.close()
 
@@ -22,6 +22,7 @@ def fetch_match(term, searchType):
         rowDict['summary'] = row[3]
         rowDict['link'] = row[4]
         rowDict['courseid'] = row[5]
+        rowDict['tag'] = row[6]
         rows.append(rowDict)
 
     matches = []
@@ -37,7 +38,7 @@ def add_textbook(arguments):
     connection = sqlite3.connect('ore.db')
     cursor = connection.cursor()
     
-    cursor.execute("INSERT INTO textbooks VALUES (?, ?, ?, ?, ?, ?)", arguments)
+    cursor.execute("INSERT INTO textbooks VALUES (?, ?, ?, ?, ?, ?, ?)", arguments)
     connection.commit()
     connection.close()
     
@@ -54,6 +55,7 @@ def get_textbooks_json():
         rowDict['summary'] = row[3]
         rowDict['link'] = row[4]
         rowDict['courseid'] = row[5]
+        rowDict['tag'] = row[5]
         rows.append(rowDict)
     json_string = json.dumps(rows)
     return json_string
