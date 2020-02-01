@@ -29,10 +29,12 @@
   </select>
 
 <script src="/scripts/search.js"></script>
-  
+
+<!-- login popUp -->
+
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="" alt="Avatar" class="avatar">
@@ -46,6 +48,42 @@
       <input type="password" placeholder="Enter Password" name="psw" required>
         
       <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<!-- add popUp -->
+
+<div id="id01" class="motal">
+  
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="PopUpContainer">
+      <label for="TitleInput"><b>Title</b></label>
+      <input type="text" placeholder="Enter Title" name="TitleInput" required>
+
+      <label for="AuthorInput"><b>Author</b></label>
+      <input type="text" placeholder="Enter Author" name="AuthorInput" required>
+
+      <label for="SubjectInput"><b>Subject</b></label>
+      <input type="text" placeholder="Enter SubjectInput" name="SubjectInput" required>
+
+      <label for="SummaryInput"><b>Summary</b></label>
+      <input type="password" placeholder="Enter Quick Summary" name="SummaryInput" required>
+        
+      <button type="submit"></button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
