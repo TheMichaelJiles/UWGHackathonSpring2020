@@ -57,7 +57,7 @@ nav a{
     font-family: 'Franklin Gothic Medium';
     font-size: large;
     outline: none;
-    background-image: url("../images/BookBank_SearchBar.png");
+    background-image: url("/images/BookBank_SearchBar.png");
     background-size: contain;
     padding-left: 20px;
     display: block;
