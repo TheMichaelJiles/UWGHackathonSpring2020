@@ -131,7 +131,11 @@ a{
 
  #searchResults{
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   list-style-type: none;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+
+   min-height: 100vh;
  }
 
  #searchResults li {
@@ -307,3 +311,47 @@ img.resize {
   .select-css option {
     font-weight:normal;
   }
+
+/* Search styling */
+
+header{
+  color: white;
+  background-image: url("/images/BookBank_searchHeader.png");
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 88px;
+  margin: 0;
+}
+
+#spacer {
+  margin-top: 100px;
+}
+
+.flexitem {
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 2%;
+}
+
+footer {
+  position: absolute;
+  background-image: url("/images/BookBank_ColoredTiles.png");
+  background-repeat: no-repeat;
+  height: 300px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+
+html {
+  padding: 0;
+}
