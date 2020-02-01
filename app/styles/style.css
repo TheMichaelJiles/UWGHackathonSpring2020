@@ -129,6 +129,25 @@ a{
     padding-top: 10%;
  }
 
+ #searchResults{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   list-style-type: none;
+ }
+
+ #searchResults li {
+    border: 5px solid black;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px -4px black;
+ }
+
+ .listItemHeader {
+   font-size: xx-large;
+   font-style: italic;
+ }
+
 img.resize {
     max-width: 20%;
     max-height: 20%;
