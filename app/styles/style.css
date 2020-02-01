@@ -1,8 +1,12 @@
+a{
+    cursor: pointer;
+}
+
 /*General nav bar*/
 #sideNav a{
     position: absolute;
     transition: .4s;
-    padding: 15px;
+    padding:15px 25px 15px 0px;
     width: 100px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
@@ -17,21 +21,21 @@
 
 }
 /*add 60px to top each tab added*/
-#x{
+#login{
     color: rgb(124, 108, 108);
     background: #FFF200;
     top:20px;
     left:-50px;
 }
 
-#y{
+#library{
     color: rgb(124, 108, 108);
     background: #EC008B;
     top:85px;
     left:-65px;
 }
 
-#z{
+#ERO{
     color: rgb(124, 108, 108);
     background: #00AEEF;
     top:150px;
@@ -110,7 +114,130 @@
     margin-right: auto;
   }
 
+ #mainLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+ }
+
 img.resize {
     max-width: 20%;
     max-height: 20%;
 }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Pop Up */
+
+.modal [type=text], input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px atuo;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  .modal button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .modal button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .modal .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the image and position the close button */
+  .modal .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  .modal img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .modal .PopUpContainer {
+    padding: 30px;
+    
+  }
+  
+  .modal span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 20%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
