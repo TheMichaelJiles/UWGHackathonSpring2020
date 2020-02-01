@@ -33,7 +33,7 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
         except Exception as e:
             self.send_error(400, str(e))
 
-    # This query will be of the form ?term={}&searchType={title|author|subject|summary}
+    # This query will be of the form ?term={}&searchType={title|author|subject|summary|courseid|tag}
     def process_search(self, queryString):
         search_terms = parse_qs(queryString)
         self.log_message("search terms... qs = %s", str(search_terms))
@@ -70,20 +70,9 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
         args.append(qs['subject'][0])
         args.append(qs['summary'][0])
         args.append(qs['link'][0])
+        args.append(qs['courseid'][0])
+        args.append(qs['tag'][0])
         return args
-
-    def build_valid_addition_body(self):
-        return '''
-               <html lang="en">
-               <head>
-                 <meta charset="utf-8">
-                 <title>BookBank</title>
-               </head>
-               <body>
-                 <h1>Successful Addition was made to the database.</h1>
-               </body>
-               </html>
-               '''
 
 # start the server
 if __name__ == '__main__':
