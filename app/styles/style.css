@@ -2,7 +2,7 @@
 #sideNav a{
     position: absolute;
     transition: .4s;
-    padding: 15px;
+    padding:15px 25px 15px 0px;
     width: 100px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
@@ -17,21 +17,21 @@
 
 }
 /*add 60px to top each tab added*/
-#x{
+#login{
     color: rgb(124, 108, 108);
     background: #FFF200;
     top:20px;
     left:-50px;
 }
 
-#y{
+#library{
     color: rgb(124, 108, 108);
     background: #EC008B;
     top:85px;
     left:-65px;
 }
 
-#z{
+#ERO{
     color: rgb(124, 108, 108);
     background: #00AEEF;
     top:150px;
@@ -109,6 +109,13 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+ #mainLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+ }
 
 img.resize {
     max-width: 20%;
