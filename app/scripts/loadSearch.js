@@ -15,7 +15,7 @@ function showResponse(response) {
     let resultsList = document.getElementById("searchResults");
     let responseList = JSON.parse(response);
     for (const result of responseList) {
-        let resultItem = `<li><div>
+        let resultItem = `<span class="flexitem">
                             <h4 class="listItemHeader">${result['title'].split('_').join(' ')}</h4>
                             <h5>Author: ${result['author'].split('_').join(' ')}</h5>
                             <h5>Subject: ${result['subject'].split('_').join(' ')}</h5>
@@ -24,7 +24,7 @@ function showResponse(response) {
                             <h5>Summary: </h5>
                             <p>${result['summary'].split('_').join(' ')}</p>
                             <a href="${result['link']}" target="_blank">Read Textbook</a>
-                         </div></li>`
+                         </span>`
         resultsList.innerHTML += resultItem;
     }
 }
