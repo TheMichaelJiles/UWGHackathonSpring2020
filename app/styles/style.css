@@ -1,28 +1,71 @@
-/* #nav{
-    display: block;
-    z-index: 100;
+#nav{
+    display:block;
+    background: #2d3436;
     position: fixed;
     transition: .4s;
-    margin-top: 72px;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
+    width: 10%;
+    height: 100%;
+    text-align: left;
+    opacity: 1;
     pointer-events: none;
-} */
-
-#Title-icon{
-height: 600px;
-max-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;
-background-blend-mode: overlay;
 }
 
-#SearchBox{
+#nav ul{
+    list-style: none;
+    padding:0 32px;
+    text-align: center;
+}
 
+#nav ul li{
+    padding:20px 12px;
+}
+
+#nav a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+
+}
+
+#titleIcon{
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    }
+
+#searchBox{
+    outline: none;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+img.resize {
+    max-width: 20%;
+    max-height: 20%;
+}
+
+.search {
+    background: transparent;
+    background-repeat: no-repeat;
+    border: transparent;
+    font-family: 'Franklin Gothic Medium';
+    font-size: large;
+    outline: none;
+    background-image: url("../images/BookBank_SearchBar.png") !important;
+    background-size: contain;
+    padding-left: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 540px;
 }
