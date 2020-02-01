@@ -19,8 +19,9 @@ function setButtonListener() {
 		let subject = document.getElementById("subject").value.replace(/ /g, "_");
 		let summary = document.getElementById("summary").value.replace(/ /g, "_");
 		let theLink = document.getElementById("link").value.replace(/ /g, "_");
+		let courseid = document.getElementById("courseid").value.replace(/ /g, "_");
 		
-		let url = "http://127.0.0.1:8000/add?title=" + title + "&author=" + author + "&subject=" + subject + "&summary=" + summary + "&link=" + theLink;
+		let url = "http://127.0.0.1:8000/add?title=" + title + "&author=" + author + "&subject=" + subject + "&summary=" + summary + "&link=" + theLink + "&courseid=" + courseid;
 		httpGetAsync(url, function(response) {
 			setTimeout(() => window.close(), 250);
 		});
