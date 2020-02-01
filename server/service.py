@@ -36,6 +36,7 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
 
 
 # start the server
-print("OER Database webserver running")
-daemon = http.server.HTTPServer(('', 8000), OERDatabaseHandler)
-daemon.serve_forever()
+if __name__ == '__main__':
+    print("OER Database webserver running")
+    daemon = http.server.HTTPServer(('', 8000), OERDatabaseHandler)
+    daemon.serve_forever()
