@@ -1,4 +1,5 @@
-#nav{
+/*General nav bar*/
+nav{
     display:block;
     background: #2d3436;
     position: fixed;
@@ -7,27 +8,38 @@
     height: 100%;
     text-align: left;
     opacity: 1;
-    pointer-events: none;
 }
 
-#nav ul{
+nav ul{
     list-style: none;
     padding:0 32px;
     text-align: center;
 }
 
-#nav ul li{
+nav ul li{
     padding:20px 12px;
 }
 
-#nav a{
-    font-family: Arial, Helvetica, sans-serif;
+nav a{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 40px;
+    color: white;
+    text-decoration: none;
+}
 
+.cyan:hover{
+    color: cyan;
+}
+
+.magenta:hover{
+    color: magenta;
+}
+
+.yellow:hover{
+    color: yellow;
 }
 
 #titleIcon{
-    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +72,7 @@ img.resize {
     font-family: 'Franklin Gothic Medium';
     font-size: large;
     outline: none;
-    background-image: url("../images/BookBank_SearchBar.png") !important;
+    background-image: url("../images/BookBank_SearchBar.png");
     background-size: contain;
     padding-left: 20px;
     display: block;
