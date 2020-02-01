@@ -8,10 +8,6 @@ a{
   width: 100%;
 }
 
-#typeSelector{
-
-}
-
 /*General nav bar*/
 #sideNav a{
     position: absolute;
@@ -45,7 +41,7 @@ a{
     left:-65px;
 }
 
-#ERO{
+#OER{
     color: #2d3436;
     background: #00AEEF;
     top:150px;
