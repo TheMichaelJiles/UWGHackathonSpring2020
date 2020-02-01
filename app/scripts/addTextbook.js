@@ -22,7 +22,7 @@ function setButtonListener() {
 		
 		let url = "http://127.0.0.1:8000/add?title=" + title + "&author=" + author + "&subject=" + subject + "&summary=" + summary + "&link=" + theLink;
 		httpGetAsync(url, function(response) {
-			console.log(response);
+			setTimeout(() => window.close(), 250);
 		});
 	});
 }

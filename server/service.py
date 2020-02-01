@@ -17,6 +17,12 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
             self.log_message("resource: %s", resource)
             if resource == "/add":
                 self.process_add(queryString)
+            elif resource == "/search":
+                self.process_search(queryString)
+            elif resource == "/getSearchResults":
+                self.process_results()
+            elif response == "/getSearchTerm":
+                self.process_term()
             elif resource == "/":
                 self.process_resource_request('index.html', 'text/html')
             elif resource.endswith('.html'):
@@ -31,6 +37,30 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
         except Exception as e:
             self.send_error(400, str(e))
 
+    def process_results(self):
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        self.wfile.write(bytes(self.search, 'UTF-8'))
+
+    def process_term(self):
+        term = { 'term': self.term }
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        self.wfile.write(bytes(json.dumps(term), 'UTF-8'))
+
+    # This query will be of the form ?term={}&searchType={title|author|subject|summary}
+    def process_search(self, queryString):
+        search_terms = parse_qs(queryString)
+        self.log_message("search terms... qs = %s", str(search_terms))
+
+        self.term = search_terms['term'][0]
+        self.search = database.fetch_match(self.term, search_terms['searchType'][0])
+
+        self.send_response(200)
+        self.end_headers()
+
     def process_add(self, queryString):
         add_terms = parse_qs(queryString)
         self.log_message("search terms... qs = %s", str(add_terms))
@@ -39,9 +69,7 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
         database.add_textbook(argument_list)
             
         self.send_response(200)
-        self.send_header('Content-Type', 'application/json')
         self.end_headers()
-        self.wfile.write(bytes(database.get_textbooks_json(), 'UTF-8'))
 
     def process_resource_request(self, resource, mime):
         with open(resource, 'rb') as f:
