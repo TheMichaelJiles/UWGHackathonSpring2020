@@ -114,3 +114,8 @@ img.resize {
     max-width: 20%;
     max-height: 20%;
 }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
