@@ -16,19 +16,21 @@
   </div>
   <div id="titleicon">
   <h1><img src="/images/BookBank_MainLogo.png" title="Icon" id="mainLogo" height="200" width="1250"></h1>
-  <input id="searchBox" type="text" placeholder="search resources" >
+  <span id="searchTools">
+    <select id="typeSelector" class="select-css">
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+        <option value="subject">Subject</option>
+        <option value="summary">Summary</option>
+        <option value="courseid">Course ID</option>
+        <option value="tag">Tag</option>
+    </select>
+    <input id="searchBox" type="text" placeholder="search resources" >
+  </span>
   <img id="coloredBoxes" src="/images/BookBank_ColoredBoxes.png">
   <input id="searchButton" type="image" src="/images/BookBank_SearchButton.png" alt="Submit">
 </div>
   
-  <select id="typeSelector">
-    <option value="title">Title</option>
-    <option value="author">Author</option>
-    <option value="subject">Subject</option>
-    <option value="summary">Summary</option>
-    <option value="courseid">Course ID</option>
-    <option value="tag">Tag</option>
-  </select>
 
 <script src="/scripts/search.js"></script>
 
@@ -66,9 +68,9 @@
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate">
+  <div class="modal-content animate">
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Motal">&times;</span>
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Motal">&times;</span>
       <img src="images/BookBank_AddButton.png" alt="Avatar" class="avatar">
     </div>
 
@@ -94,26 +96,28 @@
       <label for="TagInput"><b>Tag</b></label>
       <input type="text" placeholder="Enter Tag" name="TagInput" id="tag" required>
 
-      <button type="submit" id="submitbutton">submit</button>
- </div>
+      <button type="submit" id="submitButton">submit</button>
+      <script src="/scripts/addTextbook.js"></script>
+    </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
-  </form>
+  </div>
 </div>
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
-
+var modal = document.getElementById("id02");
+var modal2 = document.getElementById("id01");
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    } else if (event.target == modal2) {
+        modal2.style.display = "none";
     }
 }
 </script>
-<script src="/scripts/addTextbook.js"></script>
 
 </body>
 </html>
