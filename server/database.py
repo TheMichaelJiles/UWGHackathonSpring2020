@@ -23,7 +23,13 @@ def get_textbooks_json():
     
     rows = []
     for row in cursor.execute("SELECT * FROM textbooks"):
-        rows.append(row)
+        rowDict = {}
+        rowDict['title'] = row[0]
+        rowDict['author'] = row[1]
+        rowDict['subject'] = row[2]
+        rowDict['summary'] = row[3]
+        rowDict['link'] = row[4]
+        rows.append(rowDict)
     json_string = json.dumps(rows)
     return json_string
     

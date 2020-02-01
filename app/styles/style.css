@@ -65,7 +65,7 @@
     font-family: 'Franklin Gothic Medium';
     font-size: large;
     outline: none;
-    background-image: url("../images/BookBank_SearchBar.png");
+    background-image: url("/images/BookBank_SearchBar.png");
     background-size: contain;
     padding-left: 20px;
     display: block;
@@ -79,12 +79,29 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-image: url("../images/BookBank_ColoredBoxes.png");
-    background-size: contain;
-    padding-left: 290px;
-    margin-top: -1px;
+    margin-top: -51px;
     height: 50px;
     width: 150 px;
+    background-image: "../images/BookBank_SearchButton.png";
+    background-size: contain;
+    border: transparent;
+    background: transparent;
+    padding-left: 410px;
+}
+
+#coloredBoxes {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 310px;
+    margin-top: -2px;
+    height: 50px;
+    width: 150 px;
+}
+
+#summaryBox {
+    height: 150px;
+    width: 300px;
 }
 
 .center {

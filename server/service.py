@@ -18,18 +18,15 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
             if resource == "/add":
                 self.process_add(queryString)
             elif resource == "/":
-                with open('index.html', 'rb') as f:
-                    self.send_response(200)
-                    self.send_header('Content-Type', 'text/html')
-                    self.end_headers()
-                    self.wfile.write(f.read())
-            else:
-                with open(resource[1:], 'rb') as f:
-                    self.send_response(200)
-                    self.send_header('Content-Type', 'text/html')
-                    self.end_headers()
-                    self.wfile.write(f.read())
-            
+                self.process_resource_request('index.html', 'text/html')
+            elif resource.endswith('.html'):
+                self.process_resource_request(resource[1:], 'text/html')
+            elif resource.endswith('.css'):
+                self.process_resource_request(resource[1:], 'text/css')
+            elif resource.endswith('.png'):
+                self.process_resource_request(resource[1:], 'image/png')
+            elif resource.endswith('.js'):
+                self.process_resource_request(resource[1:], 'text/javascript')
             
         except Exception as e:
             self.send_error(400, str(e))
@@ -45,6 +42,13 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json')
         self.end_headers()
         self.wfile.write(bytes(database.get_textbooks_json(), 'UTF-8'))
+
+    def process_resource_request(self, resource, mime):
+        with open(resource, 'rb') as f:
+            self.send_response(200)
+            self.send_header('Content-Type', mime)
+            self.end_headers()
+            self.wfile.write(f.read())
 
     def get_add_arguments(self, qs):
         args = []
