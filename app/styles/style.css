@@ -1,43 +1,51 @@
 /*General nav bar*/
-nav{
-    display:block;
-    background: #2d3436;
-    position: fixed;
+#sideNav a{
+    position: absolute;
     transition: .4s;
-    width: 10%;
-    height: 100%;
-    text-align: left;
-    opacity: 1;
-}
-
-nav ul{
-    list-style: none;
-    padding:0 32px;
-    text-align: center;
-}
-
-nav ul li{
-    padding:20px 12px;
-}
-
-nav a{
+    padding: 15px;
+    width: 100px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
-    color: white;
+    font-size: 20px;
     text-decoration: none;
+    border-radius: 0 5px 5px 0;
 }
 
-.cyan:hover{
-    color: cyan;
+#sideNav a:hover{
+    left:0;
+    font-size: 25px;
+    text-align: center;
+
+}
+/*add 60px to top each tab added*/
+#x{
+    color: rgb(124, 108, 108);
+    background: #FFF200;
+    top:20px;
+    left:-50px;
 }
 
-.magenta:hover{
-    color: magenta;
+#y{
+    color: rgb(124, 108, 108);
+    background: #EC008B;
+    top:85px;
+    left:-65px;
 }
 
-.yellow:hover{
-    color: yellow;
+#z{
+    color: rgb(124, 108, 108);
+    background: #00AEEF;
+    top:150px;
+    left: -80px;
 }
+
+#add{
+    color: rgb(124, 108, 108);
+    top: 215px;
+    left: -95px;
+    background: black;
+}
+
+/* Title */
 
 #titleIcon{
     display: flex;
