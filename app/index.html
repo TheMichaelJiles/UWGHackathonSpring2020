@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Book Bank</title>
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
@@ -20,13 +20,11 @@
         <a href="">Test</a>
       </li>
     </ul>
-  </div>
-  <div id="titleIcon">
-  <h1><img src="images/BookBank_MainLogo.png" alt="Title-Icon" height="200px" width="1250px"></h1>
-  <div>
-  <input type="text" id="searchBox">
-  <input id="searchBoxSubmit" type="submit" value="Go">
-</div>
+  </div> -->
+  <div id="titleicon">
+  <h1><img src="images/BookBank_MainLogo.png" title="Icon" class="center" height="200" width="1250"></h1>
+  <input id="SearchBox" type="text" placeholder="search resources" class="searchbar"><br>
+  <input id="searchBoxSubmit" type="submit" value="Go" class="center" width=50>
 </div>
   <div>
    
@@ -34,3 +32,33 @@
  
 </body>
 </html>
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  img.resize {
+    max-width: 20%;
+    max-height: 20%;
+  }
+
+  input[type="text"] {
+    background: transparent;
+    background-repeat: no-repeat;
+    border: transparent;
+    font-family: 'Franklin Gothic Medium';
+    font-size: large;
+    outline: none;
+    background-image: url("images/BookBank_SearchBar.png");
+    background-size: contain;
+    padding-left: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 540px;
+  }
+
+</style>
