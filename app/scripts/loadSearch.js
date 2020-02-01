@@ -19,6 +19,7 @@ function showResponse(response) {
                             <h4>Title: ${result['title'].split('_').join(' ')}</h4>
                             <h5>Author: ${result['author'].split('_').join(' ')}</h5>
                             <h5>Subject: ${result['subject'].split('_').join(' ')}</h5>
+                            <h5>Course ID: ${result['courseid'].split('_').join(' ')}</h5>
                             <h5>Summary: </h5>
                             <p>${result['summary'].split('_').join(' ')}</p>
                             <a href="${result['link']}" target="_blank">Link</a>
