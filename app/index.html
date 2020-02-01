@@ -12,7 +12,7 @@
       <a id="login" onclick="document.getElementById('id01').style.display='block'">login</a>
       <a id="library" href="https://www.oreilly.com/sign-in.html">library</a>
       <a id="ERO" href="index.html">E.R.O</a>
-      <a id="add" href="AddTextbookPage.html" target="_blank">add</a>
+      <a id="add" onclick="document.getElementById('id02').style.display='block'">add</a>
   </div>
   <div id="titleicon">
   <h1><img src="/images/BookBank_MainLogo.png" title="Icon" id="mainLogo" height="200" width="1250"></h1>
@@ -63,36 +63,40 @@
 
 <!-- add popUp -->
 
-<div id="id01" class="motal">
+<div id="id02" class="modal">
   
-  <form class="modal-content animate" method="post">
+  <form class="modal-content animate">
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="" alt="Avatar" class="avatar">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Motal">&times;</span>
+      <img src="images/BookBank_AddButton.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="PopUpContainer">
       <label for="TitleInput"><b>Title</b></label>
-      <input type="text" placeholder="Enter Title" name="TitleInput" required>
+      <input type="text" placeholder="Enter Title" name="TitleInput" id="title" required>
 
       <label for="AuthorInput"><b>Author</b></label>
-      <input type="text" placeholder="Enter Author" name="AuthorInput" required>
+      <input type="text" placeholder="Enter Author" name="AuthorInput" id="author" required>
 
       <label for="SubjectInput"><b>Subject</b></label>
-      <input type="text" placeholder="Enter SubjectInput" name="SubjectInput" required>
+      <input type="text" placeholder="Enter Subject" name="SubjectInput" id="subject" required>
 
       <label for="SummaryInput"><b>Summary</b></label>
-      <input type="password" placeholder="Enter Quick Summary" name="SummaryInput" required>
+      <textarea rows="10" cols="50" placeholder="Enter Quick Summary" name="summaryInput" id="summary"></textarea>
         
-      <button type="submit"></button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
+      <label for="LinkInput"><b>Link</b></label>
+      <input type="url" placeholder="Enter URL" name="LinkInput" id="link" required>
+      <br>
+      <label for="CourseInput"><b>CourseID</b></label>
+      <input type="text" placeholder="Enter CourseID" name="CourseInput" id="courseid" required>
 
+      <label for="TagInput"><b>Tag</b></label>
+      <input type="text" placeholder="Enter Tag" name="TagInput" id="tag" required>
+
+      <button type="submit" id="submitbutton">submit</button>
+ </div>
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
 </div>
@@ -108,6 +112,7 @@ window.onclick = function(event) {
     }
 }
 </script>
+<script src="/scripts/addTextbook.js"></script>
 
 </body>
 </html>

@@ -133,7 +133,7 @@ img.resize {
 
 /* Pop Up */
 
-.modal [type=text], input[type=password]{
+.motal,.modal [type=text], input[type=url], textarea{
     width: 100%;
     padding: 12px 20px;
     margin: 8px atuo;
@@ -143,7 +143,7 @@ img.resize {
   }
   
   /* Set a style for all buttons */
-  .modal button {
+  .motal,.modal button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -153,41 +153,41 @@ img.resize {
     width: 100%;
   }
   
-  .modal button:hover {
+  .motal,.modal button:hover {
     opacity: 0.8;
   }
   
   /* Extra styles for the cancel button */
-  .modal .cancelbtn {
+  .motal,.modal .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
   }
   
   /* Center the image and position the close button */
-  .modal .imgcontainer {
+  .motal,.modal .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
   }
   
-  .modal img.avatar {
+  .motal,.modal img.avatar {
     width: 40%;
     border-radius: 50%;
   }
   
-  .modal .PopUpContainer {
+  .motal,.modal .PopUpContainer {
     padding: 30px;
     
   }
   
-  .modal span.psw {
+  .motal,.modal span.psw {
     float: right;
     padding-top: 16px;
   }
   
   /* The Modal (background) */
-  .modal {
+  .motal,.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
      z-index: 1; /* Sit on top */
@@ -202,7 +202,7 @@ img.resize {
   }
   
   /* Modal Content/Box */
-  .modal-content {
+  .motal-content,.modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
