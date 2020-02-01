@@ -5,23 +5,15 @@ def create_textbook_table():
     connection = sqlite3.connect('ore.db')
     cursor = connection.cursor()
     
-    cursor.execute('''CREATE TABLE textbooks
-                          (
-                             title TEXT, 
-                             author TEXT, 
-                             subject TEXT, 
-                             summary TEXT, 
-                             link TEXT
-                           )''')
+    cursor.execute('''CREATE TABLE IF NOT EXISTS textbooks (title TEXT, author TEXT, subject TEXT, summary TEXT, link TEXT)''')
     connection.commit()
     connection.close()
         
-def add_textbook(title, author, subject, summary, link):
+def add_textbook(arguments):
     connection = sqlite3.connect('ore.db')
     cursor = connection.cursor()
     
-    row_values = '(' + title + ', ' + author + ', ' + subject + ', ' + summary + ', ' + link + ')'
-    cursor.execute("INSERT INTO textbooks VALUES " + row_values)
+    cursor.execute("INSERT INTO textbooks VALUES (?, ?, ?, ?, ?)", arguments)
     connection.commit()
     connection.close()
     

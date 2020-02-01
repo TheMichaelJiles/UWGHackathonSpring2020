@@ -20,9 +20,10 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
                 self.send_error(404)
             
             add_terms = parse_qs(queryString)
-            self.log_message("search terms... qs = %s", str(bands))
+            self.log_message("search terms... qs = %s", str(add_terms))
             
-            database.add_textbook(add_terms['title'], add_terms['author'], add_terms['subject'], add_terms['summary'], add_terms['link'])
+            argument_list = self.get_add_arguments(add_terms)
+            database.add_textbook(argument_list)
             
             body = self.build_valid_addition_body()
             
@@ -33,6 +34,15 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
         except Exception as e:
             self.send_error(400, str(e))
 
+
+    def get_add_arguments(self, qs):
+        args = []
+        args.append(qs['title'][0])
+        args.append(qs['author'][0])
+        args.append(qs['subject'][0])
+        args.append(qs['summary'][0])
+        args.append(qs['link'][0])
+        return args
 
     def build_valid_addition_body(self):
         return '''
