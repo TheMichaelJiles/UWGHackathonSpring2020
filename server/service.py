@@ -1,5 +1,6 @@
 import http.server
 from urllib.parse import parse_qs
+import database
 import json
 
 
@@ -14,18 +15,16 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
             
             # This resource is the beginning of the query of the format
             # 127.0.0.1:8000/search
-            if resource != "/search":
+            if resource != "/add":
                 self.log_message("resource: " + resource)
                 self.send_error(404)
             
-            bands = parse_qs(queryString)
-            self.log_message("built bands... qs = %s", str(bands))
+            add_terms = parse_qs(queryString)
+            self.log_message("search terms... qs = %s", str(bands))
             
-            #bandsList = self.makeBandsList(bands)
-            self.log_message("built bandsList...")
+            database.add_textbook(add_terms['title'], add_terms['author'], add_terms['subject'], add_terms['summary'], add_terms['link'])
             
-            #decoded = decodeResistance(bandsList)
-            #body = self.buildResponseBody(decoded)
+            body = self.build_valid_addition_body()
             
             self.send_response(200)
             self.send_header('Content-Type', 'text/html')
@@ -34,6 +33,19 @@ class OERDatabaseHandler(http.server.BaseHTTPRequestHandler):
         except Exception as e:
             self.send_error(400, str(e))
 
+
+    def build_valid_addition_body(self):
+        return '''
+               <html lang="en">
+               <head>
+                 <meta charset="utf-8">
+                 <title>BookBank</title>
+               </head>
+               <body>
+                 <h1>Successful Addition was made to the database.</h1>
+               </body>
+               </html>
+               '''
 
 # start the server
 if __name__ == '__main__':
