@@ -16,12 +16,12 @@ function showResponse(response) {
     let responseList = JSON.parse(response);
     for (const result of responseList) {
         let resultItem = `<li><div>
-                            <h4>Title: ${result['title'].split('_').join(' ')}</h4>
+                            <h4 class="listItemHeader">${result['title'].split('_').join(' ')}</h4>
                             <h5>Author: ${result['author'].split('_').join(' ')}</h5>
                             <h5>Subject: ${result['subject'].split('_').join(' ')}</h5>
                             <h5>Summary: </h5>
                             <p>${result['summary'].split('_').join(' ')}</p>
-                            <a href="${result['link']}" target="_blank">Link</a>
+                            <a href="${result['link']}" target="_blank">Read Textbook</a>
                          </div></li>`
         resultsList.innerHTML += resultItem;
     }
