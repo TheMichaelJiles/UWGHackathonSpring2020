@@ -21,8 +21,11 @@ def get_textbooks_json():
     connection = sqlite3.connect('ore.db')
     cursor = connection.cursor()
     
-    rows = cursor.execute("SELECT * FROM textbooks")
-    return json.dumps(rows)
+    rows = []
+    for row in cursor.execute("SELECT * FROM textbooks"):
+        rows.append(row)
+    json_string = json.dumps(rows)
+    return json_string
     
 if __name__ == '__main__':
     create_textbook_table()
