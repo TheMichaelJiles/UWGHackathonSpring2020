@@ -5,24 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Book Bank</title>
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
     <div id="sideNav">
       <a id="x" href="#">tes</a>
       <a id="y" href="#">hello</a>
       <a id="z" href="#">Test</a>
-      <a id="add" href="AddTextbookPage.html" target="_blank">Add</a>
+      <a id="add" href="/AddTextbookPage.html" target="_blank">Add</a>
   </div>
   <div id="titleicon">
-  <h1><img src="images/BookBank_MainLogo.png" title="Icon" class="center" height="200" width="1250"></h1>
+  <h1><img src="/images/BookBank_MainLogo.png" title="Icon" class="center" height="200" width="1250"></h1>
   <input id="searchBox" type="text" placeholder="search resources" >
-  <img id="coloredBoxes" src="images/BookBank_ColoredBoxes.png">
-  <input id="searchButton" type="image" src="images/BookBank_SearchButton.png" alt="Submit">
+  <img id="coloredBoxes" src="/images/BookBank_ColoredBoxes.png">
+  <input id="searchButton" type="image" src="/images/BookBank_SearchButton.png" alt="Submit">
 </div>
-  <div>
-   
-  </div>
- 
+  
+  <select id="typeSelector">
+    <option value="title">Title</option>
+    <option value="author">Author</option>
+    <option value="subject">Subject</option>
+    <option value="summary">Summary</option>
+  </select>
+
+<script src="/scripts/search.js"></script>
+  
 </body>
 </html>

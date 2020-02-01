@@ -65,7 +65,7 @@
     font-family: 'Franklin Gothic Medium';
     font-size: large;
     outline: none;
-    background-image: url("../images/BookBank_SearchBar.png");
+    background-image: url("/images/BookBank_SearchBar.png");
     background-size: contain;
     padding-left: 20px;
     display: block;
@@ -82,7 +82,7 @@
     margin-top: -51px;
     height: 50px;
     width: 150 px;
-    background-image: "../images/BookBank_SearchButton.png";
+    background-image: "/images/BookBank_SearchButton.png";
     background-size: contain;
     border: transparent;
     background: transparent;

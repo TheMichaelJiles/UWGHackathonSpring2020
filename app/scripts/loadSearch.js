@@ -11,23 +11,38 @@ function httpGetAsync(url, callback) {
 	xmlHttp.send(null);
 }
 
-function showTerm(response) {
-    let span = document.getElementById("searchTerm");
-    console.log("Term Response: " + response);
-}
-
 function showResponse(response) {
     let resultsList = document.getElementById("searchResults");
-    console.log("Results Response: " + response);
+    let responseList = JSON.parse(response);
+    for (const result of responseList) {
+        let resultItem = `<li><div>
+                            <h4>Title: ${result['title'].split('_').join(' ')}</h4>
+                            <h5>Author: ${result['author'].split('_').join(' ')}</h5>
+                            <h5>Subject: ${result['subject'].split('_').join(' ')}</h5>
+                            <h5>Summary: </h5>
+                            <p>${result['summary'].split('_').join(' ')}</p>
+                            <a href="${result['link']}" target="_blank">Link</a>
+                         </div></li>`
+        resultsList.innerHTML += resultItem;
+    }
 }
 
 function init() {
-    let termUrl = 'http://127.0.0.1:8000/getSearchTerm?';
-    httpGetAsync(termUrl, function(response) {
-        showTerm(response);
-    });
+    let windowUrl = document.location.href;
+    let params = windowUrl.split('?')[1].split('&');
+    let termQuery = params[0].split('=');
+    let typeQuery = params[1].split('=');
 
-    let searchUrl = 'http://127.0.0.1:8000/getSearchResults?';
+    let term = termQuery[1];
+    let type = typeQuery[1];
+
+    let termSpan = document.getElementById("type");
+    termSpan.innerHTML = type.charAt(0).toUpperCase() + type.slice(1);
+
+    let searchSpan = document.getElementById("searchTerm");
+    searchSpan.innerHTML = term;
+
+    let searchUrl = 'http://127.0.0.1:8000/search?term=' + term + '&searchType=' + type;
     httpGetAsync(searchUrl, function(response) {
         showResponse(response);
     });
