@@ -1,0 +1,28 @@
+/* #nav{
+    display: block;
+    z-index: 100;
+    position: fixed;
+    transition: .4s;
+    margin-top: 72px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+} */
+
+#Title-icon{
+height: 600px;
+max-width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
+background-blend-mode: overlay;
+}
+
+#SearchBox{
+
+}
